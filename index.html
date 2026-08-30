@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paula — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Portfolio site showcasing projects, skills, and contact." />
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Paula</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav" id="site-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Hi, I'm Paula</h1>
+        <p class="lede">I build thoughtful web interfaces and simple tools that help people work better.</p>
+        <p><a class="btn" href="#projects">See my work</a></p>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <h2>About</h2>
+      <p>I’m a front-end developer focused on accessible, performant web experiences. I enjoy design systems, animations, and small utilities that make life easier.</p>
+      <ul class="skills">
+        <li>HTML &amp; CSS</li>
+        <li>JavaScript</li>
+        <li>Accessibility</li>
+        <li>Performance</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="projects container">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Project One</h3>
+          <p>Small web app that demonstrates interactive UI patterns.</p>
+          <p><a href="work/project-one.html">View</a></p>
+        </article>
+        <article class="card">
+          <h3>Project Two</h3>
+          <p>Design system components and documentation site.</p>
+          <p><a href="work/project-two.html">View</a></p>
+        </article>
+        <article class="card">
+          <h3>Project Three</h3>
+          <p>Data visualization and lightweight reporting tools.</p>
+          <p><a href="work/project-three.html">View</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Contact</h2>
+      <p>If you'd like to work together, send a note — or use the form below.</p>
+      <form id="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Paula — Built with care.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
