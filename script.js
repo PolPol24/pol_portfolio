@@ -87,6 +87,9 @@ if (navToggle && nav) {
 if (dialog) {
   const closeBtn = dialog.querySelector(".dialog-close");
   closeBtn?.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
+  });
 }
 
 // Smooth scroll for anchor links
