@@ -1,6 +1,6 @@
-# Portfolio website
+# PolFolio
 
-This is a minimal, static portfolio site you can customize and publish.
+This is a minimal, static portfolio site (PolFolio) you can customize and publish.
 
 ## Customize
 
