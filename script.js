@@ -1,6 +1,12 @@
 const activities = {
   // For multiple photos in one card, use: images: ["assets/activities/photo-1.jpg", "assets/activities/photo-2.jpg"]
-  quizzes: [{ title: "Your first quiz", date: "Coming soon", image: null }],
+  quizzes: [
+    {
+      title: "Emerging Technologies — Quiz 1",
+      date: "Graded quiz",
+      images: ["assets/quiz1_1.png", "assets/quiz1_2.png"],
+    },
+  ],
   laboratory: [
     {
       title: "Your first laboratory activity",
