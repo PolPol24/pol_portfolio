@@ -1,26 +1,26 @@
-const activities = [
-  // Replace with real graded work when available
-  { title: "Your first graded activity", date: "Coming soon", image: null },
-  { title: "Your next quiz", date: "Coming soon", image: null },
-  { title: "Another learning milestone", date: "Coming soon", image: null },
-];
+const activities = {
+  quizzes: [{ title: "Your first quiz", date: "Coming soon", image: null }],
+  laboratory: [{ title: "Your first laboratory activity", date: "Coming soon", image: null }],
+  examinations: [{ title: "Your first examination", date: "Coming soon", image: null }],
+};
 
-const grid = document.querySelector("#activity-grid");
 const dialog = document.querySelector("#image-dialog");
 const dialogImage = dialog?.querySelector("img");
 
-if (grid) {
-  grid.innerHTML = activities.map((item) => `
+Object.entries(activities).forEach(([category, items]) => {
+  const grid = document.querySelector(`#${category}-grid`);
+  if (!grid) return;
+  grid.innerHTML = items.map((item) => `
     <figure class="activity-card" ${item.image ? 'tabindex="0" role="button"' : ""}>
       ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy">` : `<div class="image-placeholder">Photo will be added after grading</div>`}
       <figcaption><strong>${item.title}</strong><small>${item.date}</small></figcaption>
     </figure>`).join("");
 
-  grid.addEventListener("click", (event) => {
-    const image = event.target.closest(".activity-card")?.querySelector("img");
-    if (image && dialog && dialogImage) { dialogImage.src = image.src; dialogImage.alt = image.alt; dialog.showModal(); }
-  });
-}
+});
+document.addEventListener("click", (event) => {
+  const image = event.target.closest(".activity-card")?.querySelector("img");
+  if (image && dialog && dialogImage) { dialogImage.src = image.src; dialogImage.alt = image.alt; dialog.showModal(); }
+});
 
 // Navigation toggle
 const navToggle = document.querySelector(".nav-toggle");
