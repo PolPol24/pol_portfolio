@@ -59,7 +59,11 @@
       </section>
     </main>
     <dialog id="image-dialog">
-      <button aria-label="Close image">×</button><img alt="" />
+      <button class="dialog-close" aria-label="Close image">×</button>
+      <button class="dialog-previous" aria-label="Previous image">‹</button>
+      <img alt="" />
+      <button class="dialog-next" aria-label="Next image">›</button>
+      <p class="dialog-count" aria-live="polite"></p>
     </dialog>
     <footer class="site-footer">
       <div class="container">

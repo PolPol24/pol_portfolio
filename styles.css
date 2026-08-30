@@ -506,14 +506,16 @@ dialog img {
 }
 dialog button {
   position: absolute;
-  top: -43px;
-  right: 0;
+  z-index: 1;
   border: 0;
   background: none;
   color: white;
   font-size: 2rem;
   cursor: pointer;
 }
+.dialog-close { top: -43px; right: 0; }
+.dialog-previous, .dialog-next { top: 50%; transform: translateY(-50%); padding: 4px 14px; background: rgb(34 54 39 / 0.7); border-radius: 50%; font-size: 2.5rem; line-height: 1; }
+.dialog-previous { left: 12px; }.dialog-next { right: 12px; }.dialog-count { position: absolute; bottom: -38px; left: 50%; transform: translateX(-50%); margin: 0; color: white; font-size: .8rem; }.photo-count { position: absolute; right: 10px; top: 10px; padding: 4px 8px; border-radius: 999px; background: rgb(41 71 48 / .8); color: white; font-size: .68rem; font-weight: 800; }.activity-card { position: relative; }
 .nav a.active {
   color: var(--forest);
 }

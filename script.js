@@ -1,4 +1,5 @@
 const activities = {
+  // For multiple photos in one card, use: images: ["assets/activities/photo-1.jpg", "assets/activities/photo-2.jpg"]
   quizzes: [{ title: "Your first quiz", date: "Coming soon", image: null }],
   laboratory: [
     {
@@ -14,27 +15,55 @@ const activities = {
 
 const dialog = document.querySelector("#image-dialog");
 const dialogImage = dialog?.querySelector("img");
+const dialogPrevious = dialog?.querySelector(".dialog-previous");
+const dialogNext = dialog?.querySelector(".dialog-next");
+const dialogCount = dialog?.querySelector(".dialog-count");
+let activeImages = [];
+let activeImageIndex = 0;
+
+function showDialogImage() {
+  const image = activeImages[activeImageIndex];
+  if (!image || !dialogImage) return;
+  dialogImage.src = image;
+  dialogImage.alt = `Activity photo ${activeImageIndex + 1}`;
+  if (dialogCount) dialogCount.textContent = `${activeImageIndex + 1} of ${activeImages.length}`;
+  if (dialogPrevious) dialogPrevious.hidden = activeImages.length < 2;
+  if (dialogNext) dialogNext.hidden = activeImages.length < 2;
+}
 
 Object.entries(activities).forEach(([category, items]) => {
   const grid = document.querySelector(`#${category}-grid`);
   if (!grid) return;
   grid.innerHTML = items
     .map(
-      (item) => `
-    <figure class="activity-card" ${item.image ? 'tabindex="0" role="button"' : ""}>
-      ${item.image ? `<img src="${item.image}" alt="${item.title}" loading="lazy">` : `<div class="image-placeholder">Photo will be added after grading</div>`}
+      (item) => {
+        const images = item.images || (item.image ? [item.image] : []);
+        return `
+    <figure class="activity-card" ${images.length ? 'tabindex="0" role="button" data-images=\'' + JSON.stringify(images) + "'" : ""}>
+      ${images.length ? `<img src="${images[0]}" alt="${item.title}" loading="lazy">${images.length > 1 ? `<span class="photo-count">${images.length} photos</span>` : ""}` : `<div class="image-placeholder">Photo will be added after grading</div>`}
       <figcaption><strong>${item.title}</strong><small>${item.date}</small></figcaption>
-    </figure>`,
+    </figure>`;
+      },
     )
     .join("");
 });
 document.addEventListener("click", (event) => {
-  const image = event.target.closest(".activity-card")?.querySelector("img");
-  if (image && dialog && dialogImage) {
-    dialogImage.src = image.src;
-    dialogImage.alt = image.alt;
+  const card = event.target.closest(".activity-card");
+  if (card?.dataset.images && dialog) {
+    activeImages = JSON.parse(card.dataset.images);
+    activeImageIndex = 0;
+    showDialogImage();
     dialog.showModal();
   }
+});
+
+dialogPrevious?.addEventListener("click", () => {
+  activeImageIndex = (activeImageIndex - 1 + activeImages.length) % activeImages.length;
+  showDialogImage();
+});
+dialogNext?.addEventListener("click", () => {
+  activeImageIndex = (activeImageIndex + 1) % activeImages.length;
+  showDialogImage();
 });
 
 // Navigation toggle
@@ -50,7 +79,7 @@ if (navToggle && nav) {
 
 // Close image dialog
 if (dialog) {
-  const closeBtn = dialog.querySelector("button");
+  const closeBtn = dialog.querySelector(".dialog-close");
   closeBtn?.addEventListener("click", () => dialog.close());
 }
 
