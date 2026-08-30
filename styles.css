@@ -220,17 +220,7 @@ body {
   position: relative;
   padding-top: 18px;
 }
-.about-title::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 115px;
-  width: 73px;
-  height: 12px;
-  border-radius: 50%;
-  background: #f4d4bd;
-  transform: rotate(-3deg);
-}
+
 .about-title h2 span {
   color: #df9977;
 }
