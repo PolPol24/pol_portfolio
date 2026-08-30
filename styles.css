@@ -190,7 +190,7 @@ body {
   margin: 0 auto;
   object-fit: contain;
   object-position: center bottom;
-  transform: translateY(32px) scale(1.1);
+  transform: translateY(70px) scale(1.12);
   transform-origin: center bottom;
   border: 0;
   border-radius: 0;
