@@ -189,6 +189,7 @@ body {
   height: 100%;
   margin: 0;
   object-fit: cover;
+  transform: translateY(28px);
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -675,6 +676,7 @@ dialog button {
   .hero-image {
     width: 235px;
     height: 235px;
+    transform: none;
   }
   .about {
     grid-template-columns: 1fr;
