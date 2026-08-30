@@ -119,7 +119,7 @@ if (form) {
     const message = data.get("message") || "";
     const subject = encodeURIComponent(`Contact from ${name}`);
     const body = encodeURIComponent(`From: ${name} (${email})\n\n${message}`);
-    window.location.href = `mailto:your.paulandrew.samson@cvsu.edu.ph?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:paulandrew.samson@cvsu.edu.ph?subject=${subject}&body=${body}`;
   });
 }
 
