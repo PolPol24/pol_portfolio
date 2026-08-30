@@ -175,8 +175,11 @@ body {
   background: white;
 }
 .hero-right {
-  height: 510px;
+  min-height: 510px;
   align-self: stretch;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   overflow: hidden;
 }
 .hero-right::before,
@@ -185,13 +188,13 @@ body {
 }
 .hero-image {
   display: block;
-  width: 96%;
-  height: 100%;
-  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  height: calc(100% - 48px);
+  margin: 0;
   object-fit: contain;
   object-position: center bottom;
-  transform: translateY(70px) scale(1.12);
-  transform-origin: center bottom;
+  transform: none;
   border: 0;
   border-radius: 0;
   box-shadow: none;
