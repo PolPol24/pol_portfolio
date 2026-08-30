@@ -372,7 +372,7 @@ body {
 .activity-card img,
 .image-placeholder {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
   display: block;
   object-fit: cover;
 }
