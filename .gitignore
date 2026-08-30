@@ -1,3 +1,23 @@
+# Node/npm
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Environment
+.env
+
+# Logs
+npm-debug.log*
+.Yarn-debug.log*
+.Yarn-error.log*
+
 # Operating system and editor files
 .DS_Store
 Thumbs.db
