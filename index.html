@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
   <meta name="description" content="Portfolio site showcasing projects, skills, and contact." />
   <link rel="icon" href="assets/favicon.ico">
 </head>
@@ -18,6 +18,7 @@
       <nav class="nav" id="site-nav">
         <a href="#about">About</a>
         <a href="#projects">Portfolio</a>
+        <a href="#activities">Activities</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="cta-top" href="#contact">Let's Talk</a>
@@ -45,14 +46,25 @@
     </section>
 
     <section id="about" class="about container">
-      <h2>About</h2>
-      <p>I’m a front-end developer focused on accessible, performant web experiences. I enjoy design systems, animations, and small utilities that make life easier.</p>
-      <ul class="skills">
-        <li>HTML &amp; CSS</li>
-        <li>JavaScript</li>
-        <li>Accessibility</li>
-        <li>Performance</li>
-      </ul>
+      <div class="about-title">
+        <p class="eyebrow">A little introduction</p>
+        <h2>About<br><span>me.</span></h2>
+      </div>
+      <div class="about-body">
+        <p class="about-lead">I’m a front-end developer focused on accessible, thoughtful web experiences. I enjoy turning ideas into useful, well-made things.</p>
+        <div class="about-facts">
+          <div><small>Currently</small><strong>Student &amp; creator</strong></div>
+          <div><small>Based in</small><strong>Your city, country</strong></div>
+          <div><small>Favourite tools</small><strong>HTML, CSS &amp; JavaScript</strong></div>
+        </div>
+        <p class="skills-label">Things I enjoy working on</p>
+        <ul class="skills">
+          <li>Web design</li>
+          <li>JavaScript</li>
+          <li>Accessibility</li>
+          <li>Creative coding</li>
+        </ul>
+      </div>
     </section>
 
     <section id="projects" class="projects container">
@@ -76,9 +88,14 @@
       </div>
     </section>
 
+    <section id="activities" class="activities container">
+      <p class="eyebrow">Learning archive</p>
+      <h2>Quizzes &amp; activities</h2>
+      <div class="activity-grid" id="activity-grid" aria-live="polite"></div>
+    </section>
+
     <section id="contact" class="contact container">
-      <h2>Contact</h2>
-      <p>If you'd like to work together, send a note — or use the form below.</p>
+      <div class="contact-copy"><p class="eyebrow">Get in touch</p><h2>Have an idea?<br><span>Let’s talk.</span></h2><p>Questions, opportunities, or a simple hello — my inbox is always open.</p><a class="contact-email" href="mailto:your.email@example.com">your.email@example.com ↗</a></div>
       <form id="contact-form">
         <label>
           Name
@@ -102,6 +119,8 @@
       <p>© <span id="year"></span> PolFolio — Built with care.</p>
     </div>
   </footer>
+
+  <dialog id="image-dialog"><button aria-label="Close image">×</button><img alt=""></dialog>
 
   <script src="script.js" defer></script>
 </body>
